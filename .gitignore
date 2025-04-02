@@ -71,3 +71,4 @@ lib/
 
 # Coverage report
 coverage/
+.npmrc
