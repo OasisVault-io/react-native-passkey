@@ -179,6 +179,14 @@ class Passkey: NSObject, RNPasskeyResultHandler {
         authRequest.excludedCredentials = excludeCredentials.map({ $0.getPlatformDescriptor() })
       }
     }
+
+    if #available(iOS 18.0, *) {
+      if let prf = request.extensions?.prf {
+        let prfInput = ASAuthorizationPublicKeyCredentialPRFRegistrationInput.self.InputValues(saltInput1: prf.eval.first)
+        let prfObj = ASAuthorizationPublicKeyCredentialPRFRegistrationInput.inputValues(prfInput)
+        authRequest.prf = prfObj
+      }
+    }
     
     if let userVerificationPref = request.authenticatorSelection?.userVerification {
       authRequest.userVerificationPreference = userVerificationPref.appleise()
@@ -200,6 +208,18 @@ class Passkey: NSObject, RNPasskeyResultHandler {
         authRequest.largeBlob = ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput.read;
       }
       
+      if let largeBlobWriteData = request.extensions?.largeBlob?.write {
+        authRequest.largeBlob = ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput.write(largeBlobWriteData)
+      }
+    }
+
+    if #available(iOS 18.0, *) {
+      if let prf = request.extensions?.prf {
+        let prfInput = ASAuthorizationPublicKeyCredentialPRFAssertionInput.self.InputValues(saltInput1: prf.eval.first)
+        let prfObj = ASAuthorizationPublicKeyCredentialPRFAssertionInput.inputValues(prfInput)
+        authRequest.prf = prfObj
+      }
+ 
       if let largeBlobWriteData = request.extensions?.largeBlob?.write {
         authRequest.largeBlob = ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput.write(largeBlobWriteData)
       }

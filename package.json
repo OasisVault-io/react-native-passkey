@@ -1,6 +1,6 @@
 {
-  "name": "react-native-passkey",
-  "version": "3.1.0",
+  "name": "@oasisvault/react-native-passkey",
+  "version": "3.1.1",
   "description": "Passkey implementation for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -42,15 +42,15 @@
     "authentication",
     "auth"
   ],
-  "repository": "https://github.com/f-23/react-native-passkey",
-  "author": "f-23 <fabian@kuentzler.at> (https://github.com/f-23)",
+  "repository": "https://github.com/OasisVault-io/react-native-passkey",
+  "author": "oasis <dev@oasisvault.io> (https://github.com/OasisVault-io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/f-23/react-native-passkey/issues"
+    "url": "https://github.com/OasisVault-io/react-native-passkey/issues"
   },
-  "homepage": "https://github.com/f-23/react-native-passkey#readme",
+  "homepage": "https://github.com/OasisVault-io/react-native-passkey#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
