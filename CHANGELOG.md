@@ -1,5 +1,12 @@
 
 
+## 3.1.2 (2025-04-02)
+
+
+### Features
+
+* add prf option on iOS ([af7d76c](https://github.com/OasisVault-io/react-native-passkey/commit/af7d76c7d1303c192ccf926e206caef6f28b5b6d))
+
 # [3.1.0](https://github.com/f-23/react-native-passkey/compare/v3.0.0...v3.1.0) (2025-01-14)
 
 # [3.0.0](https://github.com/f-23/react-native-passkey/compare/v3.0.0-rc2...v3.0.0) (2024-10-30)
